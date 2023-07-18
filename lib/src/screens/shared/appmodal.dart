@@ -16,7 +16,7 @@ class _AuthPopUpState extends State<AuthPopUp> {
     return AlertDialog(
       backgroundColor: Colors.transparent,
       content: SizedBox(
-        height: MediaQuery.of(context).size.height * 0.5,
+        height: MediaQuery.of(context).size.height * 0.6,
         child: SingleChildScrollView(
           child: Column(
             children: [
