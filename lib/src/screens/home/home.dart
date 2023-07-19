@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mr_app/src/screens/home/send_money.dart/send_money.dart';
 import 'package:mr_app/src/screens/home/widgets/amount.dart';
 import 'package:mr_app/src/screens/home/widgets/country_picker.dart';
 import 'package:mr_app/src/screens/home/widgets/home_option.dart';
@@ -183,7 +184,12 @@ class _HomePageState extends State<HomePage> {
                     const SizedBox(height: 20),
                     AppButton(
                       text: 'Send Money Now',
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const SendMoney()));
+                      },
                     ),
                     const SizedBox(height: 20),
                     Row(
