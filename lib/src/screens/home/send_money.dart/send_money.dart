@@ -31,7 +31,8 @@ class _SendMoneyState extends State<SendMoney>
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(80), // here the desired height
+        preferredSize: Size.fromHeight(MediaQuery.of(context).size.height *
+            0.12), // here the desired height
         child: AppBar(
           backgroundColor: const Color.fromRGBO(255, 221, 0, 1),
           // centerTitle: true,

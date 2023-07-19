@@ -52,7 +52,7 @@ class _AddReceiverState extends State<AddReceiver> {
 
     return SingleChildScrollView(
       child: SizedBox(
-        height: MediaQuery.of(context).size.height * 0.85,
+        height: MediaQuery.of(context).size.height * 0.86,
         width: MediaQuery.of(context).size.width,
         child: Column(
           children: [
