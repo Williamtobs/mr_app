@@ -12,7 +12,7 @@ class AppButton extends StatelessWidget {
         onPressed();
       },
       child: Container(
-        width: MediaQuery.of(context).size.width * 0.6,
+        width: MediaQuery.of(context).size.width,
         height: 50,
         decoration: BoxDecoration(
           color: const Color.fromRGBO(255, 221, 0, 1),

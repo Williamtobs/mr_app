@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:mr_app/src/screens/auth/signup/signup_screen.dart';
+import 'package:mr_app/src/screens/home/home.dart';
 import 'package:mr_app/src/screens/shared/app_button.dart';
 import 'package:mr_app/src/screens/shared/app_plain_button.dart';
 import 'package:mr_app/src/screens/shared/app_textfield.dart';
@@ -103,13 +104,12 @@ class _LoginWIthEmailState extends State<LoginWIthEmail> {
                       child: AppButton(
                         text: 'SIGN IN',
                         onPressed: () {
-                          // AuthPopUp();
-                          // showDialog(
-                          //   context: context,
-                          //   builder: (BuildContext context) {
-                          //     return const AuthPopUp();
-                          //   },
-                          // );
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const HomePage(),
+                            ),
+                          );
                         },
                       ),
                     ),
