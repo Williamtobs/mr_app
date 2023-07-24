@@ -44,6 +44,7 @@ class _AddReceiverState extends State<AddReceiver> {
   ];
   @override
   Widget build(BuildContext context) {
+    print(MediaQuery.of(context).size.height);
     selectedReceivers(Map receiver) {
       setState(() {
         selectedReceiver = receiver;
@@ -52,7 +53,9 @@ class _AddReceiverState extends State<AddReceiver> {
 
     return SingleChildScrollView(
       child: SizedBox(
-        height: MediaQuery.of(context).size.height * 0.86,
+        height: MediaQuery.of(context).size.height > 732
+            ? MediaQuery.of(context).size.height * 0.86
+            : MediaQuery.of(context).size.height * 1,
         width: MediaQuery.of(context).size.width,
         child: Column(
           children: [
@@ -62,7 +65,7 @@ class _AddReceiverState extends State<AddReceiver> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 5),
                   const Text(
                     'Recently added',
                     style: TextStyle(
@@ -77,7 +80,7 @@ class _AddReceiverState extends State<AddReceiver> {
                     receivers: recentReceiver,
                     onTap: selectedReceivers,
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 5),
                   const Text(
                     'Other Receivers',
                     style: TextStyle(
@@ -95,10 +98,10 @@ class _AddReceiverState extends State<AddReceiver> {
                 ],
               ),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 5),
             const Spacer(),
             Container(
-              height: MediaQuery.of(context).size.height * 0.30,
+              // height: MediaQuery.of(context).size.height * 0.30,
               width: MediaQuery.of(context).size.width,
               padding: const EdgeInsets.symmetric(
                 horizontal: 10,
@@ -193,9 +196,9 @@ class _AddReceiverState extends State<AddReceiver> {
                           children: [
                             SizedBox(
                               width: MediaQuery.of(context).size.width * 0.2,
-                              child: Column(
+                              child: const Column(
                                 crossAxisAlignment: CrossAxisAlignment.end,
-                                children: const [
+                                children: [
                                   Text(
                                     'Fee :',
                                     style: TextStyle(
@@ -228,9 +231,9 @@ class _AddReceiverState extends State<AddReceiver> {
                             const SizedBox(width: 10),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * 0.24,
-                              child: Column(
+                              child: const Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                children: const [
+                                children: [
                                   Text(
                                     '10.00 USD',
                                     style: TextStyle(

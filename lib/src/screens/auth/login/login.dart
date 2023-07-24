@@ -21,24 +21,28 @@ class _LoginScreenState extends State<LoginScreen> {
   String countryCode = '91';
   @override
   Widget build(BuildContext context) {
+    print(MediaQuery.of(context).size.height);
     return AuthBackground(
       child: SizedBox(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         child: SingleChildScrollView(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
             children: [
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.1,
+                height: MediaQuery.of(context).size.height >= 732
+                    ? MediaQuery.of(context).size.height * 0.2
+                    : MediaQuery.of(context).size.height * 0.08,
               ),
-              Image.asset(
-                'assets/logo.png',
-                width: 81,
-                height: 81,
-              ),
-              const SizedBox(
-                height: 40,
-              ),
+              // Image.asset(
+              //   'assets/logo.png',
+              //   width: 81,
+              //   height: 81,
+              // ),
+              // const SizedBox(
+              //   height: 50,
+              // ),
               Container(
                 width: MediaQuery.of(context).size.width * 0.8,
                 // height: 443,

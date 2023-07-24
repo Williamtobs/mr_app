@@ -22,7 +22,7 @@ class _InitiateState extends State<Initiate> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: SizedBox(
-        height: MediaQuery.of(context).size.height * 0.93,
+        // height: MediaQuery.of(context).size.height * 0.93,
         width: MediaQuery.of(context).size.width,
         child: Column(
           children: [
@@ -204,9 +204,9 @@ class _InitiateState extends State<Initiate> {
                     ],
                   ),
                   const SizedBox(height: 10),
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
+                    children: [
                       PaymentTypeWidget(
                         icon: Icons.credit_card,
                         title: 'Credit card',
@@ -231,9 +231,9 @@ class _InitiateState extends State<Initiate> {
               ),
             ),
             const SizedBox(height: 10),
-            const Spacer(),
+            // const Spacer(),
             Container(
-              height: MediaQuery.of(context).size.height * 0.3,
+              // height: MediaQuery.of(context).size.height * 0.3,
               width: MediaQuery.of(context).size.width,
               padding: const EdgeInsets.symmetric(
                 horizontal: 10,

@@ -28,10 +28,8 @@ class _LoginWIthEmailState extends State<LoginWIthEmail> {
         width: MediaQuery.of(context).size.width,
         child: SingleChildScrollView(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.06,
-              ),
               Padding(
                 padding: const EdgeInsets.only(left: 20),
                 child: Align(
@@ -48,17 +46,25 @@ class _LoginWIthEmailState extends State<LoginWIthEmail> {
                   ),
                 ),
               ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height >= 732
+                    ? MediaQuery.of(context).size.height * 0.12
+                    : MediaQuery.of(context).size.height * 0.00,
+              ),
+              // const SizedBox(
+              //   height: 20,
+              // ),
               const SizedBox(
                 height: 20,
               ),
-              Image.asset(
-                'assets/logo.png',
-                width: 81,
-                height: 81,
-              ),
-              const SizedBox(
-                height: 40,
-              ),
+              // Image.asset(
+              //   'assets/logo.png',
+              //   width: 81,
+              //   height: 81,
+              // ),
+              // const SizedBox(
+              //   height: 40,
+              // ),
               Container(
                 width: MediaQuery.of(context).size.width * 0.8,
                 // height: 443,

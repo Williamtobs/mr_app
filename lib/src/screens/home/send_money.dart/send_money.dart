@@ -32,7 +32,7 @@ class _SendMoneyState extends State<SendMoney>
       backgroundColor: Colors.white,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(MediaQuery.of(context).size.height *
-            0.12), // here the desired height
+            0.13), // here the desired height
         child: AppBar(
           backgroundColor: const Color.fromRGBO(255, 221, 0, 1),
           // centerTitle: true,

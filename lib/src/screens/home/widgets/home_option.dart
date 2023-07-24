@@ -13,7 +13,7 @@ class HomeOption extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 244,
+      // height: 244,
       width: MediaQuery.of(context).size.width * 0.43,
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
       decoration: BoxDecoration(

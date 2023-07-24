@@ -29,8 +29,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.06,
+              // SizedBox(
+              //   height: MediaQuery.of(context).size.height * 0.06,
+              // ),
+              const SizedBox(
+                height: 20,
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 20),
@@ -48,14 +51,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 20,
-              ),
-              Image.asset(
-                'assets/logo.png',
-                width: 81,
-                height: 81,
-              ),
+              // const SizedBox(
+              //   height: 20,
+              // ),
+              // Image.asset(
+              //   'assets/logo.png',
+              //   width: 81,
+              //   height: 81,
+              // ),
               const SizedBox(
                 height: 40,
               ),

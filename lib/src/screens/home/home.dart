@@ -18,14 +18,21 @@ class _HomePageState extends State<HomePage> {
   final TextEditingController _amountController = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    print(MediaQuery.of(context).size.height);
     return Scaffold(
       backgroundColor: const Color.fromRGBO(255, 221, 0, 1),
       body: SingleChildScrollView(
-        child: SizedBox(
-          height: MediaQuery.of(context).size.height,
-          child: Column(
-            children: [
-              Padding(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            // const Spacer(),
+            SizedBox(
+              height: MediaQuery.of(context).size.height < 732
+                  ? MediaQuery.of(context).size.height * 0.7
+                  : MediaQuery.of(context).size.height < 800
+                      ? MediaQuery.of(context).size.height * 0.62
+                      : MediaQuery.of(context).size.height * 0.6,
+              child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -122,100 +129,100 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-              const Spacer(),
-              Container(
-                height: MediaQuery.of(context).size.height * 0.45,
-                width: MediaQuery.of(context).size.width,
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 10,
-                  vertical: 20,
+            ),
+            // const Spacer(),
+            Container(
+              // height: MediaQuery.of(context).size.height * 0.55,
+              width: MediaQuery.of(context).size.width,
+              padding: const EdgeInsets.symmetric(
+                horizontal: 10,
+                vertical: 20,
+              ),
+              decoration: const BoxDecoration(
+                color: Color.fromRGBO(19, 23, 28, 1),
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(30),
+                  topRight: Radius.circular(30),
+                  bottomLeft: Radius.zero,
+                  bottomRight: Radius.zero,
                 ),
-                decoration: const BoxDecoration(
-                  color: Color.fromRGBO(19, 23, 28, 1),
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(30),
-                    topRight: Radius.circular(30),
-                    bottomLeft: Radius.zero,
-                    bottomRight: Radius.zero,
+              ),
+              child: Column(
+                children: [
+                  const SizedBox(height: 10),
+                  const Text(
+                    'Send money\n 24/7 around the world',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Color.fromRGBO(255, 221, 0, 1),
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-                child: Column(
-                  children: [
-                    const SizedBox(height: 10),
-                    const Text(
-                      'Send money\n 24/7 around the world',
-                      textAlign: TextAlign.center,
+                  const SizedBox(height: 20),
+                  const CountryPicker(
+                    hint: 'Send to',
+                  ),
+                  const SizedBox(height: 10),
+                  AmountField(
+                    controller: _amountController,
+                    icon: Icons.payments,
+                  ),
+                  const SizedBox(height: 10),
+                  RichText(
+                    text: const TextSpan(
+                      text: 'Current Location: ',
                       style: TextStyle(
                         color: Color.fromRGBO(255, 221, 0, 1),
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
+                        fontSize: 13,
+                        fontWeight: FontWeight.normal,
                       ),
-                    ),
-                    const SizedBox(height: 20),
-                    const CountryPicker(
-                      hint: 'Send to',
-                    ),
-                    const SizedBox(height: 10),
-                    AmountField(
-                      controller: _amountController,
-                      icon: Icons.payments,
-                    ),
-                    const SizedBox(height: 10),
-                    RichText(
-                      text: const TextSpan(
-                        text: 'Current Location: ',
-                        style: TextStyle(
-                          color: Color.fromRGBO(255, 221, 0, 1),
-                          fontSize: 13,
-                          fontWeight: FontWeight.normal,
-                        ),
-                        children: [
-                          TextSpan(
-                            text: 'Service Location near - Jaipur 302019',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 13,
-                              fontWeight: FontWeight.normal,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(height: 20),
-                    AppButton(
-                      text: 'Send Money Now',
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const SendMoney()));
-                      },
-                    ),
-                    const SizedBox(height: 20),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Icon(
-                          Icons.verified_user,
-                          color: Color.fromRGBO(255, 221, 0, 1),
-                          size: 14,
-                        ),
-                        SizedBox(width: 5),
-                        Text(
-                          'Be informed. Be aware. Protect yourself from fraud',
+                      children: [
+                        TextSpan(
+                          text: 'Service Location near - Jaipur 302019',
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 12,
+                            fontSize: 13,
                             fontWeight: FontWeight.normal,
                           ),
                         ),
                       ],
-                    )
-                  ],
-                ),
-              )
-            ],
-          ),
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  AppButton(
+                    text: 'Send Money Now',
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const SendMoney()));
+                    },
+                  ),
+                  const SizedBox(height: 20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Icon(
+                        Icons.verified_user,
+                        color: Color.fromRGBO(255, 221, 0, 1),
+                        size: 14,
+                      ),
+                      SizedBox(width: 5),
+                      Text(
+                        'Be informed. Be aware. Protect yourself from fraud',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 12,
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            )
+          ],
         ),
       ),
     );

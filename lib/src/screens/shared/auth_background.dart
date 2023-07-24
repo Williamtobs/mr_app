@@ -27,7 +27,7 @@ class AuthBackground extends StatelessWidget {
           ),
           Positioned(
             right: -25,
-            top: MediaQuery.of(context).size.height * 0.35,
+            top: MediaQuery.of(context).size.height * 0.30,
             child: Image.asset(
               'assets/curve1.png',
               width: MediaQuery.of(context).size.width * 0.8,
@@ -36,7 +36,7 @@ class AuthBackground extends StatelessWidget {
           ),
           Positioned(
             left: -25,
-            top: MediaQuery.of(context).size.height * 0.45,
+            top: MediaQuery.of(context).size.height * 0.40,
             child: Image.asset(
               'assets/curve2.png',
               width: MediaQuery.of(context).size.width * 0.8,
